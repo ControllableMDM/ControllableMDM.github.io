@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllable Motion Diffusion Model</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333333;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 20px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    section:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    section:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+
+    section h2 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    section p {
+      line-height: 1.5;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      max-width: 60%;
+      height: auto;
+      margin: 10px;
+    }
+
+    .image-container .subtitle {
+      margin-top: 10px;
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .video-container video {
+      width: 60vw;
+      height: calc(60vw * 9 / 16);
+      max-width: 100%;
+      margin: 10px;
+    }
+
+    .video-container .subtitle {
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #333333;
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Controllable Motion Diffusion Model</h1>
+      <h3>Anonymous Authors</h3>
+    </header>
+
+    <section>
+      <div class="image-container">
+        <img src="imgs/teaser.png" alt="Image 1">
+      </div>
+
+    </section>
+
+    <main>
+      <section>
+        <h2>Abstract</h2>
+        <p style="font-size:14px;text-align:left;">Generating realistic and controllable motions for virtual
+          characters is a challenging task in computer animation, and
+          its implications extend to games, simulations, and virtual
+          reality. Recent studies have drawn inspiration from the
+          success of diffusion models in image generation,
+          demonstrating the potential for addressing this task.
+          However, the majority of these studies have been limited to
+          offline applications that target at sequence-level
+          generation that generates all steps simultaneously.<br> To
+          enable real-time motion synthesis with diffusion models in
+          response to time-varying control signals, we propose the
+          framework of the Controllable Motion Diffusion Model
+          (COMODO). Our framework begins with an auto-regressive
+          motion diffusion model (A-MDM), which generates motion
+          sequences step by step. In this way, simply using the
+          standard DDPM algorithm without any additional complexity,
+          our framework is able to generate high-fidelity motion
+          sequences over extended periods with different types of
+          control signals.  <br>Our model can generate high-fidelity motion
+          sequences over extended periods in real-time, using the
+          standard DDPM algorithm, without any additional complexity.
+          Then, we propose our reinforcement learning-based controller
+          and controlling strategies on top of the A-MDM model, so
+          that our framework can steer the motion synthesis process
+          across multiple tasks, including target reaching,
+          joystick-based control, goal-oriented control, trajectory
+          following, and maze traversing. The proposed framework
+          enables the real-time generation of diverse motions that
+          react adaptively to user commands on-the-fly, thereby
+          enhancing the overall user experience. Besides, it is
+          compatible with the inpainting-based editing methods and can
+          predict much more diverse motions without additional
+          fine-tuning of the basic motion generation models.</p>
+      </section>
+
+      <section>
+        <h2>Pipeline Overview</h2>
+        <div class="image-container">
+          <img src="imgs/pipeline.png" alt="Image 2">
+          <div class="subtitle">A-MDM: An auto-regressive motion diffusion model, COMODO: A pipeline for controllable motion synthesis that supports RL based controllers and inpainting simultaneously. </div>
+        </div>
+
+      </section>
+
+      <section>
+        <div class="video-container">
+          <video src="videos/random-play1.mp4" controls></video>
+          <div class="subtitle">Random Synthesis given three fixed initial state.</div>
+        </div>
+
+        <div class="video-container">
+          <video src="videos/random-play2.mp4" controls></video>
+          <div class="subtitle">More result of Random Synthesis.</div>
+        </div>
+
+        <h2>Controllable Synthesis through motion-inpainting</h2>
+        <div class="video-container">
+          <video src="videos/circle.mp4" controls></video>
+          <div class="subtitle">Here we can easily control heading, linear speed of the output motion by modifying each x0 during denoising.</div>
+        </div>
+
+        <div class="video-container">
+          <video src="videos/hands-cos-single.mp4" controls></video>
+          <div class="subtitle">We can control each joint. Here we force hand to follow a sinusoidal function on z axis. It can produce nature motion while following the editing command. </div>
+        </div>
+
+        <h2>Controllable Synthesis through RL</h2>
+        <div class="video-container">
+          <video src="videos/target_multi.mp4" controls></video>
+          <div class="subtitle">We can also integrate the diffusion model with RL controllers to realize task-oriented motion synthesis. </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Conclusion</h2>
+        <p style="font-size:14px;text-align:left;">In our research, we present an auto-regressive diffusion model for kinematic-based motion synthesis.  <br> 
+          we demonstrate that a first-order auto-regressive motion synthesis model can generate character motion with excellent stability and diversity using just a small number of training clips. <br>  
+           we examine different control strategies for synthesizing controllable motion sequences.  <br> 
+           We specifically propose an efficient RL-based control methodology to train the policy network for locomotion tasks and generate high-quality motions.
+        </p>
+      </section>
+    </main>
+
+   
+  </body>
+
+</html>
