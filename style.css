@@ -58,6 +58,11 @@ a {
     margin-bottom: 10px;
 }
 
+.section-2 h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
 .section-2 p {
     font-size: 1.1rem;
     padding-bottom: 10px;
@@ -91,9 +96,20 @@ a {
     padding-left: 10px;
 }
 
-div.center {
+.content {
+    
+    margin: 3cm auto;
+    width: 100px;
     text-align: center;
-}
+  }
+
+p {
+border-bottom:1px dotted;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+width: 50%; /* whatever width you want */
+}  
 
 /* media queres */
 @media(max-width:780px) {
