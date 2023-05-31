@@ -63,10 +63,13 @@
       max-width: 60%;
       height: auto;
       margin: 10px;
+      
     }
 
     .image-container .subtitle {
       margin-top: 10px;
+      width: 50%;
+      text-align: left;
     }
 
     .video-container {
@@ -85,6 +88,8 @@
 
     .video-container .subtitle {
       margin-top: 10px;
+      width: 50%;
+      text-align: left;
     }
 
     footer {
@@ -97,7 +102,7 @@
     p {
 			width: 50%;
 			margin: 0 auto;
-			text-align: center;
+			text-align: left;
 		}
 
     table {
@@ -142,7 +147,6 @@
       </table>
       <p><br><br></p>
       <h2 style="text-align: center;">Controllable Synthesis with motion-inpainting</h2>
-      <p>Our model is capabale of synthesize high-quality motion with reasonable explicit manual editing on terms of joint position or movement during denoising process.</p>
       <table>
         <tr>
           <td>
@@ -201,7 +205,7 @@
       </table>
       </section>
 
-
+      <p><br><br><br><br><br></p>
       <section>
         <h2>Abstract</h2>
           <p>Generating realistic and controllable motions for virtual
@@ -243,21 +247,21 @@
       <section>
         <h2>Pipeline Overview</h2>
         <div class="image-container">
-          <img src="imgs/pipeline.png" alt="Image 2">
+          <img src="imgs/pipeline.png" width="1200" height="400"  alt="Image 2">
           <div class="subtitle">A-MDM: An auto-regressive motion diffusion model, COMODO: A pipeline for controllable motion synthesis that supports RL based controllers and inpainting simultaneously. </div>
         </div>
-        
-        <h2>A novel method for interaction between a diffusion model and task-oriented RL controller</h2>
+        <p><br><br></p>
+       
         <div class="image-container">
-          <img src="imgs/control.png" alt="Image 2">
-          <div class="subtitle">The controllers are trained with RL to perform motion-inpainting on the base model. Essentially, for a motion frame x, the controllers intervene in the classic DDPM denoising process by predicting dx and make x0 = x0+dx 
+          <img src="imgs/control.png" alt="Image 3"  width="600" height="500">
+          <div class="subtitle">The controllers are trained with RL to perform motion-inpainting on the base model. For a motion frame x, the controllers intervene in the classic DDPM denoising process by predicting dx and make x0 = x0+dx during a few pre-determined steps.
 
       </section>
 
       <section>
         <h2>Conclusion</h2>
         
-        <p style="text-align: center;">In our research, we present an auto-regressive diffusion model for kinematic-based motion synthesis. 
+        <p>In our research, we present an auto-regressive diffusion model for kinematic-based motion synthesis. 
           we demonstrate that a first-order auto-regressive motion synthesis model can generate character motion with excellent stability and diversity using just a small number of training clips. 
            we examine different control strategies for synthesizing controllable motion sequences.  
            We specifically propose an efficient RL-based control methodology to train the policy network for locomotion tasks and generate high-quality motions.
