@@ -91,6 +91,10 @@ a {
     padding-left: 10px;
 }
 
+div.center {
+    text-align: center;
+}
+
 /* media queres */
 @media(max-width:780px) {
     .grid-2 {
