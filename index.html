@@ -108,12 +108,48 @@
 
     <section>
       <div class="image-container">
-        <img src="imgs/teaser.png" alt="Image 1">
+        <img src="imgs/teaser.png" alt="Image 1", width="400" height="300">
       </div>
-
     </section>
 
     <main>
+
+      <div id="videoal">
+        <table>
+        <tr>
+          <td>
+          <video width="200" height="200" controls>
+            <source src="videos/random-play1.mp4" type="video/mp4">
+          </video>
+          </td>
+          <td>
+          <video width="200" height="200" controls>
+            <source src="videos/random-play2.mp4" type="video/mp4">
+          </video>
+          </td>
+          </tr>
+          </table>
+        </div>
+
+        <h2>Controllable Synthesis through motion-inpainting</h2>
+        <div class="video-container">
+          <video src="videos/circle.mp4" controls></video>
+          <div class="subtitle">Here we can easily control heading, linear speed of the output motion by modifying each x0 during denoising.</div>
+        </div>
+
+        <div class="video-container">
+          <video src="videos/hands-cos-single.mp4" controls></video>
+          <div class="subtitle">We can control each joint. Here we force hand to follow a sinusoidal function on z axis. It can produce nature motion while following the editing command. </div>
+        </div>
+
+        <h2>Controllable Synthesis through RL</h2>
+        <div class="video-container">
+          <video src="videos/target_multi.mp4" controls></video>
+          <div class="subtitle">We can also integrate the diffusion model with RL controllers to realize task-oriented motion synthesis. </div>
+        </div>
+      </section>
+
+
       <section>
         <h2>Abstract</h2>
         <p style="font-size:14px;text-align:left;">Generating realistic and controllable motions for virtual
@@ -151,6 +187,7 @@
           fine-tuning of the basic motion generation models.</p>
       </section>
 
+
       <section>
         <h2>Pipeline Overview</h2>
         <div class="image-container">
@@ -158,35 +195,6 @@
           <div class="subtitle">A-MDM: An auto-regressive motion diffusion model, COMODO: A pipeline for controllable motion synthesis that supports RL based controllers and inpainting simultaneously. </div>
         </div>
 
-      </section>
-
-      <section>
-        <div class="video-container">
-          <video src="videos/random-play1.mp4" controls></video>
-          <div class="subtitle">Random Synthesis given three fixed initial state.</div>
-        </div>
-
-        <div class="video-container">
-          <video src="videos/random-play2.mp4" controls></video>
-          <div class="subtitle">More result of Random Synthesis.</div>
-        </div>
-
-        <h2>Controllable Synthesis through motion-inpainting</h2>
-        <div class="video-container">
-          <video src="videos/circle.mp4" controls></video>
-          <div class="subtitle">Here we can easily control heading, linear speed of the output motion by modifying each x0 during denoising.</div>
-        </div>
-
-        <div class="video-container">
-          <video src="videos/hands-cos-single.mp4" controls></video>
-          <div class="subtitle">We can control each joint. Here we force hand to follow a sinusoidal function on z axis. It can produce nature motion while following the editing command. </div>
-        </div>
-
-        <h2>Controllable Synthesis through RL</h2>
-        <div class="video-container">
-          <video src="videos/target_multi.mp4" controls></video>
-          <div class="subtitle">We can also integrate the diffusion model with RL controllers to realize task-oriented motion synthesis. </div>
-        </div>
       </section>
 
       <section>
