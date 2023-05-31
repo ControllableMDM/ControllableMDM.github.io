@@ -141,7 +141,8 @@
         </tr>
       </table>
       <p><br><br></p>
-      <h2 style="text-align: center;">Controllable Synthesis through motion-inpainting</h2>
+      <h2 style="text-align: center;">Controllable Synthesis with motion-inpainting</h2>
+      <p>Our model is capabale of synthesize high-quality motion with reasonable explicit manual editing on terms of joint position or movement during denoising process.</p>
       <table>
         <tr>
           <td>
@@ -151,7 +152,7 @@
             </video>
           </td>
           <td>
-            <h3 style="text-align: center;">Head following a height limit used a simple feedback rule</h3>
+            <h3 style="text-align: center;">Head following a height limit using a simple feedback rule</h3>
             <video margin="auto" width="600" height="400" controls>
               <source src="videos/head.mp4" type="video/mp4">
             </video>
@@ -166,7 +167,7 @@
       </table>
 
       <p><br><br></p>
-      <h2 style="text-align: center;">Controllable Synthesis through RL</h2>
+      <h2 style="text-align: center;">Controllable Synthesis with RL</h2>
       <table>
         <tr>
           <td>
@@ -185,8 +186,21 @@
       </table>
       </section>
 
-
       <p><br><br></p>
+
+      <h2 style="text-align: center;">Motion-Inpainting during RL controlled Tasks</h2>
+      <table>
+        <tr>
+          <td>
+            <h3 style="text-align: center;">Target Reaching</h3>
+            <video margin="auto" width="600" height="400" controls>
+              <source src="videos/raise_hand_release.mp4" type="video/mp4">
+            </video>
+          </td>
+        </tr>
+      </table>
+      </section>
+
 
       <section>
         <h2>Abstract</h2>
@@ -232,6 +246,11 @@
           <img src="imgs/pipeline.png" alt="Image 2">
           <div class="subtitle">A-MDM: An auto-regressive motion diffusion model, COMODO: A pipeline for controllable motion synthesis that supports RL based controllers and inpainting simultaneously. </div>
         </div>
+        
+        <h2>A novel method for interaction between a diffusion model and task-oriented RL controller</h2>
+        <div class="image-container">
+          <img src="imgs/control.png" alt="Image 2">
+          <div class="subtitle">The controllers are trained with RL to perform motion-inpainting on the base model. Essentially, for a motion frame x, the controllers intervene in the classic DDPM denoising process by predicting dx and make x0 = x0+dx 
 
       </section>
 
