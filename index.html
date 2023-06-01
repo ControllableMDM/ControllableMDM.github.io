@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controllable Motion Diffusion Model</title>
-    <style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controllable Motion Diffusion Model</title>
+  <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #ffffff;
@@ -63,7 +63,7 @@
       max-width: 60%;
       height: auto;
       margin: 10px;
-      
+
     }
 
     .image-container .subtitle {
@@ -80,9 +80,8 @@
     }
 
     .video-container video {
-      width: 60vw;
-      height: calc(60vw * 9 / 16);
       max-width: 100%;
+      height: auto;
       margin: 10px;
     }
 
@@ -100,184 +99,174 @@
     }
 
     p {
-			width: 50%;
-			margin: 0 auto;
-			text-align: left;
-		}
+      width: 50%;
+      margin: 0 auto;
+      text-align: left;
+    }
 
     table {
       margin: 0 auto;
+      max-width: 60%;
     }
 
     canvas {
-			border: 1px solid black;
-		}
+      border: 1px solid black;
+    }
 
+    @media only screen and (max-width: 768px) {
+      .video-container video {
+        width: 100%;
+      }
+    }
   </style>
-  </head>
+</head>
 
-  <body>
-    <header>
-      <h1>Controllable Motion Diffusion Model</h1>
-      <h3>Anonymous Authors</h3>
-    </header>
+<body>
+  <header>
+    <h1>Controllable Motion Diffusion Model</h1>
+    <h3>Anonymous Authors</h3>
+  </header>
 
-    <section>
-      <div class="image-container">
-        <img src="imgs/teaser.png" alt="Image 1", width="1000" height="600">
-      </div>
-    
-    </section>
-    
-    <main>
-      <h2 style="text-align: center;">Random Sampling</h2>
-      <table>
-        <tr>
-          <td>
-            <video margin="auto" width="600" height="400" controls>
+  <section>
+    <div class="image-container">
+      <img src="imgs/teaser.png" alt="Image 1" width="1000" height="600">
+    </div>
+
+  </section>
+
+  <main>
+    <h2 style="text-align: center;">Random Sampling</h2>
+    <table>
+      <tr>
+        <td>
+          <div class="video-container">
+            <video width=600  height=400 controls>
               <source src="videos/random-play1.mp4" type="video/mp4">
             </video>
-          </td>
-          <td>
-            <video margin="auto" width="600" height="400" controls>
+          </div>
+        </td>
+        <td>
+          <div class="video-container">
+            <video width=600  height=400 controls>
               <source src="videos/random-play2.mp4" type="video/mp4">
             </video>
-          </td>
-        </tr>
-      </table>
-      <p><br><br></p>
-      <h2 style="text-align: center;">Controllable Synthesis with motion-inpainting</h2>
-      <table>
-        <tr>
-          <td>
-            <h3 style="text-align: center;">Hand following a sine function on z-axis during random-play</h3>
-            <video margin="auto" width="600" height="400" controls>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <p><br><br></p>
+    <h2 style="text-align: center;">Controllable Synthesis with motion-inpainting</h2>
+    <table>
+      <tr>
+        <td>
+          <h3 style="text-align: center;">Hand following a sine function on z-axis during random-play</h3>
+          <div class="video-container">
+            <video width="100%" height=400 controls>
               <source src="videos/hands-cos-single.mp4" type="video/mp4">
             </video>
-          </td>
-          <td>
-            <h3 style="text-align: center;">Head following a height limit using a simple feedback rule</h3>
-            <video margin="auto" width="600" height="400" controls>
+          </div>
+        </td>
+        <td>
+          <h3 style="text-align: center;">Head following a height limit using a simple feedback rule</h3>
+          <div class="video-container">
+            <video width="100%" height=400 controls>
               <source src="videos/head.mp4" type="video/mp4">
             </video>
-          </td>
-          <td>
-            <h3 style="text-align: center;">Heading with a fixed angle while Hip following a sine function on z-axis</h3>
-            <video margin="auto" width="600" height="400" controls>
+          </div>
+        </td>
+        <td>
+          <h3 style="text-align: center;">Heading with a fixed angle while Hip following a sine function on z-axis</h3>
+          <div class="video-container">
+            <video width="100%" height=400 controls>
               <source src="videos/circle.mp4" type="video/mp4">
             </video>
-          </td>
-        </tr>
-      </table>
+          </div>
+        </td>
+      </tr>
+    </table>
 
-      <p><br><br></p>
-      <h2 style="text-align: center;">Controllable Synthesis with RL</h2>
-      <table>
-        <tr>
-          <td>
-            <h3 style="text-align: center;">Target Reaching</h3>
-            <video margin="auto" width="600" height="400" controls>
+    <p><br><br></p>
+    <h2 style="text-align: center;">Controllable Synthesis with Policy Network </h2>
+    <table>
+      <tr>
+        <td>
+          <h3 style="text-align: center;">Target Reaching</h3>
+          <div class="video-container">
+            <video width=600 height=400 controls>
               <source src="videos/target_multi.mp4" type="video/mp4">
             </video>
-          </td>
-          <td>
-            <h3 style="text-align: center;">Joystick</h3>
-            <video margin="auto" width="600" height="400" controls>
+          </div>
+        </td>
+        <td>
+          <h3 style="text-align: center;">Joystick</h3>
+          <div class="video-container">
+            <video width=600 height=400 controls>
               <source src="videos/joystick_final.mp4" type="video/mp4">
             </video>
-          </td>
-          <td>
-            <h3 style="text-align: center;">PathFollowing</h3>
-            <video margin="auto" width="600" height="400" controls>
+          </div>
+        </td>
+        <td>
+          <h3 style="text-align: center;">PathFollowing</h3>
+          <div class="video-container">
+            <video width=600 height=400 controls>
               <source src="videos/path_run2.mp4" type="video/mp4">
             </video>
-          </td>
+          </div>
+        </td>
 
-        </tr>
-      </table>
-      </section>
+      </tr>
+    </table>
+  </section>
 
-      <p><br><br></p>
+  <p><br><br></p>
 
-      <h2 style="text-align: center;">Motion-Inpainting during RL controlled Tasks</h2>
-      <table>
-        <tr>
-          <td>
-            <h3 style="text-align: center;">Target Reaching</h3>
-            <video margin="auto" width="600" height="400" controls>
-              <source src="videos/raise_hand_release.mp4" type="video/mp4">
-            </video>
-          </td>
-        </tr>
-      </table>
-      </section>
-
-      <p><br><br><br><br><br></p>
-      <section>
-        <h2>Abstract</h2>
-          <p>Generating realistic and controllable motions for virtual
-            characters is a challenging task in computer animation, and
-            its implications extend to games, simulations, and virtual
-            reality. Recent studies have drawn inspiration from the
-            success of diffusion models in image generation,
-            demonstrating the potential for addressing this task.
-            However, the majority of these studies have been limited to
-            offline applications that target at sequence-level
-            generation that generates all steps simultaneously. To
-            enable real-time motion synthesis with diffusion models in
-            response to time-varying control signals, we propose the
-            framework of the Controllable Motion Diffusion Model
-            (COMODO). Our framework begins with an auto-regressive
-            motion diffusion model (A-MDM), which generates motion
-            sequences step by step. In this way, simply using the
-            standard DDPM algorithm without any additional complexity,
-            our framework is able to generate high-fidelity motion
-            sequences over extended periods with different types of
-            control signals. Our model can generate high-fidelity motion
-            sequences over extended periods in real-time, using the
-            standard DDPM algorithm, without any additional complexity.
-            Then, we propose our reinforcement learning-based controller
-            and controlling strategies on top of the A-MDM model, so
-            that our framework can steer the motion synthesis process
-            across multiple tasks, including target reaching,
-            joystick-based control, goal-oriented control and trajectory
-            following. The proposed framework
-            enables the real-time generation of diverse motions that
-            react adaptively to user commands on-the-fly, thereby
-            enhancing the overall user experience. Besides, it is
-            compatible with the inpainting-based editing methods and can
-            predict much more diverse motions without additional
-            fine-tuning of the basic motion generation models.</p>
-      </section>
-    
-
-      <section>
-        <h2>Pipeline Overview</h2>
-        <div class="image-container">
-          <img src="imgs/pipeline.png" width="1200" height="400"  alt="Image 2">
-          <div class="subtitle">A-MDM: An auto-regressive motion diffusion model, COMODO: A pipeline for controllable motion synthesis that supports RL based controllers and inpainting simultaneously. </div>
+  <h2 style="text-align: center;">Motion-Inpainting during following policy</h2>
+  <table>
+    <tr>
+      <td>
+        <h3 style="text-align: center;">Hand is kept to a height with motion-inpainting while executing joytick command.</h3>
+        <div class="video-container">
+          <video width=600 height=400 controls>
+            <source src="videos/raise_hand_release.mp4" type="video/mp4">
+          </video>
         </div>
-        <p><br><br></p>
-       
-        <div class="image-container">
-          <img src="imgs/control.png" alt="Image 3"  width="600" height="500">
-          <div class="subtitle">The controllers are trained with RL to perform motion-inpainting on the base model. For a motion frame x, the controllers intervene in the classic DDPM denoising process by predicting dx and make x0 = x0+dx during a few pre-determined steps.
+      </td>
+    </tr>
+  </table>
+  </section>
 
-      </section>
+  <p><br><br><br><br><br></p>
+  <section>
+    <h2>Abstract</h2>
+    <p>Generating realistic and controllable motions for virtual characters is a challenging task in computer animation, and its implications extend to games, simulations, and virtual reality. Recent studies have drawn inspiration from the success of diffusion models in image generation, demonstrating the potential for addressing this task. However, the majority of these studies have been limited to offline applications that target at sequence-level generation that generates all steps simultaneously. To enable real-time motion synthesis with diffusion models in response to time-varying control signals, we propose the framework of the Controllable Motion Diffusion Model (COMODO). Our framework begins with an auto-regressive motion diffusion model (A-MDM), which generates motion sequences step by step. In this way, simply using the standard DDPM algorithm without any additional complexity, our framework is able to generate high-fidelity motion sequences over extended periods with different types of control signals. Our model can generate high-fidelity motion sequences over extended periods in real-time, using the standard DDPM algorithm, without any additional complexity. Then, we propose our reinforcement learning-based controller and controlling strategies on top of the A-MDM model, so that our framework can steer the motion synthesis process across multiple tasks, including target reaching, joystick-based control, goal-oriented control and trajectory following. The proposed framework enables the real-time generation of diverse motions that react adaptively to user commands on-the-fly, thereby enhancing the overall user experience. Besides, it is compatible with the inpainting-based editing methods and can predict much more diverse motions without additional fine-tuning of the basic motion generation models.</p>
+  </section>
 
-      <section>
-        <h2>Conclusion</h2>
-        
-        <p>In our research, we present an auto-regressive diffusion model for kinematic-based motion synthesis. 
-          we demonstrate that a first-order auto-regressive motion synthesis model can generate character motion with excellent stability and diversity using just a small number of training clips. 
-           we examine different control strategies for synthesizing controllable motion sequences.  
-           We specifically propose an efficient RL-based control methodology to train the policy network for locomotion tasks and generate high-quality motions.
-        </p>
-        
-      </section>
-    </main>
 
-   
-  </body>
+  <section>
+    <h2>Pipeline Overview</h2>
+    <div class="image-container">
+      <img src="imgs/pipeline.png" width="1200" height="400" alt="Image 2">
+      <div class="subtitle">A-MDM: An auto-regressive motion diffusion model, COMODO: A pipeline for controllable motion synthesis that supports RL based controllers and inpainting simultaneously. </div>
+    </div>
+    <p><br><br></p>
+
+    <div class="image-container">
+      <img src="imgs/control.png" alt="Image 3" width="600" height="500">
+      <div class="subtitle">The controllers are trained with RL to perform motion-inpainting on the base model. For a motion frame x, the controllers intervene in the classic DDPM denoising process by predicting dx and make x0 = x0+dx during a few pre-determined steps.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Conclusion</h2>
+
+    <p>In our research, we present an auto-regressive diffusion model for kinematic-based motion synthesis. we demonstrate that a first-order auto-regressive motion synthesis model can generate character motion with excellent stability and diversity using just a small number of training clips. we examine different control strategies for synthesizing controllable motion sequences. We specifically propose an efficient RL-based control methodology to train the policy network for locomotion tasks and generate high-quality motions.
+    </p>
+
+  </section>
+  </main>
+
+
+</body>
 
 </html>
